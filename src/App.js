@@ -1,13 +1,20 @@
+import React from 'react';
 import './App.css';
-import BasicExample from './components/NavBar'
+import NavBar from './components/NavBar/NavBar'
 import 'bootstrap/dist/css/bootstrap.min.css'
+import ItemListContainer from './components/ItemListContainer/ItemListContainer';
 
 
 function App() {
+  const greeting = {bienvenida: 'Bienvenidos a Aventura Azul'}
+
   return (
-    <nav>
-      <BasicExample />
-    </nav>
+    <div>
+      <NavBar />
+      <ItemListContainer 
+      saludo = {greeting}
+      />
+    </div>
   );
 }
 

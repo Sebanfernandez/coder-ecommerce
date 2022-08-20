@@ -2,15 +2,17 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
+import CartWidget from '../CartWidget/CartWidget';
+import logo from '../../assets/images/aventura-azul-logo.jpg';
 
-function BasicExample() {
+function NavBar() {
   return (
     <Navbar bg="light" expand="lg">
       <Container>
-        <Navbar.Brand href="#home">Aventura Azul</Navbar.Brand>
+        <Navbar.Brand className="h3" href="#home" ><img src={logo} alt="logo de aventura azul"/></Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="me-auto">
+          <Nav className="h2 p-3 me-auto">
             <Nav.Link href="#home">Home</Nav.Link>
             <Nav.Link href="#link">Quienes Somos?</Nav.Link>
             <NavDropdown title="Excursiones" id="basic-nav-dropdown">
@@ -27,8 +29,9 @@ function BasicExample() {
           </Nav>
         </Navbar.Collapse>
       </Container>
+      <CartWidget />
     </Navbar>
   );
 }
 
-export default BasicExample;
+export default NavBar;
