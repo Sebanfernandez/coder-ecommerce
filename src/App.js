@@ -6,14 +6,13 @@ import ItemListContainer from './components/ItemListContainer/ItemListContainer'
 
 
 function App() {
-  const greeting = {bienvenida: 'Bienvenidos a Aventura Azul'}
 
   return (
     <div>
       <NavBar />
-      <ItemListContainer 
-      saludo = {greeting}
-      />
+      <div>
+        <ItemListContainer greeting={'Bienvenidos a Aventura Azul'} />  
+      </div>
     </div>
   );
 }
