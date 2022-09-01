@@ -5,7 +5,7 @@ import './CartWidget';
 
 const CartWidget = () => {
   return (
-    <div className="p-4 CartIcon">
+    <div className="d-flex p-4 ">
     <AddShoppingCartIcon sx={{ fontSize: 60 }} />
     </div>
   )

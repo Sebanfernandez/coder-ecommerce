@@ -29,7 +29,10 @@ function NavBar() {
           </Nav>
         </Navbar.Collapse>
       </Container>
+      <Navbar.Collapse>
       <CartWidget />
+      </Navbar.Collapse>
+      
     </Navbar>
   );
 }
