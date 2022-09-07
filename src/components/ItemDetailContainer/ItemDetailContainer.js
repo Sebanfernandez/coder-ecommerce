@@ -1,22 +1,23 @@
 import React, { useEffect, useState } from 'react'
+import { useParams } from 'react-router-dom'
 //import ItemCount from '../ItemCount/ItemCount'
 import { getFetch } from '../../Mock'
-import ItemList from '../ItemList/ItemList'
+import ItemDetail from '../ItemDetail/ItemDetail'
 
 
 
-const ItemListContainer = ({greeting}) => {
+const ItemDetailContainer = () => {
 
-const [Excursions, setExcursions] = useState ([])
-const [loading, setLoading] = useState(true)
+const [Excursions, setExcursions] = useState ([]);
+const [loading, setLoading] = useState(true);
+const { categoryid } = useParams();
 
 useEffect(() => {
     getFetch
-    .then(resp => setExcursions(resp))
-    .catch(err => console.log(err))
+    .then(resp => setExcursions(resp.find(excur => excur.id === categoryid)))
     .finally(() => setLoading(false))
-}, [] )
-
+}, [categoryid] )
+console.log(Excursions);
 
 //const onAdd = (cantidad) => {
  //   alert(`Se agregaron ${cantidad} item al carrito`)
@@ -28,11 +29,8 @@ useEffect(() => {
             {
             loading ? <h1 className='d-flex m-5 h1 justify-content-center'>Cargando...</h1> : 
             <div >
-                <div>
-                    <p className='d-flex m-4 h1 justify-content-center'>{greeting}</p>
-                </div>
                 <div className='row row-cols-1 row-cols-md-4'>
-                <ItemList Excur = {Excursions}/>    
+                <ItemDetail Excur = {Excursions}/>    
                 </div>
             </div>
             }
@@ -42,4 +40,4 @@ useEffect(() => {
   )
 }
 
-export default ItemListContainer
+export default ItemDetailContainer

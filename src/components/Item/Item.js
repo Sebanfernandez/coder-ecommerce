@@ -8,7 +8,7 @@ import Typography from '@mui/material/Typography';
 
 const Item = ({excur}) => {
     return(
-        <Card className="p-2 m-4" sx={{ maxWidth: 345 }}>
+        <Card className="p-1 m-1" sx={{ maxWidth: 345 }}>
       <CardMedia
         component="img"
         alt="green iguana"
